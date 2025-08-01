@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Legal Assistant</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <aside class="sidebar">
+        <div class="sidebar-icon top-left-icon">
+            <i class="fas fa-balance-scale"></i>
+        </div>
+        <div class="sidebar-nav">
+            <!-- <div class="sidebar-icon"><i class="fas fa-file-alt"></i></div> -->
+            <!-- <div class="sidebar-icon"><i class="fas fa-plus"></i></div> -->
+            <button class="sidebar-icon" id="refreshPageBtn"><i class="fas fa-plus"></i></button>
+            <div class="sidebar-icon"><i class="fas fa-search"></i></div>
+            <a href="history.html" class="sidebar-icon"><i class="fas fa-folder"></i></a>
+            <a href="login.html" class="sidebar-icon"><i class="fas fa-sign-out-alt"></i></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <h1>AI Legal Assistant</h1>
+            <div class="user-profile">
+                <a href="profile.html" class="fas fa-user-circle"></a>
+            </div>
+        </header>
+
+        <section class="chat-section">
+            <h2 id="greetingHeader">How Can I Assist You ?</h2>
+            <div class="input-container">
+                <input type="text" id="userInput" placeholder="What happen...">
+                <input type="file" id="generalFileInput" style="display: none;" multiple>
+                <button class="icon-button" id="micButton"><i class="fas fa-microphone"></i></button>
+                <!-- <button class="icon-button" id="plusButton"><i class="fas fa-plus"></i></button> -->
+                <button class="icon-button send-button" id="sendButton"><i class="fas fa-arrow-right"></i></button>
+            </div>
+            <!-- <div class="main-input-files" id="mainInputFileDisplay"></div> -->
+            <div class="chat-history" id="chatHistory">
+                </div>
+        </section>
+
+        <section class="output-sections" id="outputSections">
+            <div class="cards-row">
+                <div class="card section-document-card">
+                    <h3>Section</h3>
+                    <div class="content-placeholder">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line short"></div>
+                    </div>
+                </div>
+                <div class="card section-document-card">
+                    <h3>Document</h3>
+                    <div class="content-placeholder">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line short"></div>
+                    </div>
+                </div>
+                <div class="card contract-analysis-card">
+                    <h3><i class="fas fa-file-contract"></i> Contract Analysis</h3>
+                    <div class="upload-area">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <p>Upload your contract</p>
+                        <p class="file-types">Supports PDF and DOCX files</p>
+                        <input type="file" id="contractFileInput" accept=".pdf,.docx" style="display: none;">
+                        <button class="select-file-button" id="selectFileBtn">
+                            <i class="fas fa-upload"></i> Select File
+                        </button>
+                        <span id="selectedFileName" class="selected-file-name"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="privacy-notice-card card">
+                <h3>Privacy Notice</h3>
+                <p>Your contract will be processed securely and will not be stored permanently. The analysis is performed using AI and should not be considered legal advice. For important contracts, always consult with a qualified attorney.</p>
+            </div>
+
+            <div class="summary-card card">
+                <button class="icon-button read-summary-btn" id="readSummaryBtn" style="margin-top: 10px;"><i class="fas fa-volume-up"></i></button>
+                <h3><i class="fas fa-clipboard-list"></i> Summary</h3>
+                <div class="summary-content-placeholder">
+                    <div class="line long"></div>
+                    <div class="line medium"></div>
+                    <div class="line short"></div>
+                    <div class="line long"></div>
+                    <div class="line medium"></div>
+                    <div class="line short"></div>
+                </div>
+            </div>
+
+            <div class="cards-row">
+                <div class="card risk-nonstandard-card">
+                    <h3>Risk Clause</h3>
+                    <div  class="content-placeholder">
+                        <div class="line"></div>
+                        <div class="line short"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="card risk-nonstandard-card">
+                    <h3>Non-Standard</h3>
+                    <div class="content-placeholder">
+                        <div class="line"></div>
+                        <div class="line"></div>
+                        <div class="line short"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>

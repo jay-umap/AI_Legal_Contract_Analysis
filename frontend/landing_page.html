@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Legal Assistant - Welcome</title>
+    <!-- Inter font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN for utility classes and future flexibility -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/landing.css">
+    <!-- Three.js CDN for the particle background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="font-inter">
+    <!-- Canvas for the dynamic particle background -->
+    <canvas id="backgroundCanvas"></canvas>
+
+    <!-- Main content container -->
+    <div class="landing-container">
+        <h1 class="animate-fade-in-down">Welcome to AI Legal Assistant</h1>
+        <!-- Slogan with typing effect -->
+        <p class="slogan animate-fade-in-up"></p>
+        <div class="landing-buttons animate-fade-in">
+            <!-- Corrected href to "registration.html" -->
+            <a href="registration.html" class="landing-btn register">
+                <!-- Inline SVG for Register Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user-plus mr-2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/>
+                </svg>
+                Register
+            </a>
+            <a href="login.html" class="landing-btn login">
+                <!-- Inline SVG for Login Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-in mr-2">
+                    <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" x2="3" y1="12" y2="12"/>
+                </svg>
+                Login
+            </a>
+        </div>
+        <!-- Copyright and Disclaimer -->
+        <div class="text-xs text-gray-400 mt-10 space-y-2 animate-fade-in-up">
+            <p>&copy; 2025 AI Legal Assistant. All rights reserved.</p>
+            <p>For important contracts, always consult with a qualified attorney.</p>
+        </div>
+    </div>
+
+    <!-- JavaScript for dynamic effects -->
+    <script src="js/landing_page.js"></script>
+</body>
+</html>

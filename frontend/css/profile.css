@@ -1,0 +1,120 @@
+body {
+  background-color: #252525;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  color: #eee;
+}
+
+.profile-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.profile-container {
+  background-color: #2e2e2e;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+fieldset {
+  border: 1px solid #444;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 10px;
+  color: #ddd;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+span {
+  color: red;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #444;
+  color: #fff;
+  font-size: 14px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  /* This line fixes the overflow issue */
+  box-sizing: border-box; 
+}
+
+input:not([readonly]):focus {
+    box-shadow: 0 0 0 2px #5a5a5a;
+}
+
+
+input[readonly] {
+  background-color: #333;
+  color: #aaa;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+.input-icon input {
+  padding-left: 34px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end; /* Aligns single button to the right */
+  gap: 10px;
+}
+
+button {
+  padding: 10px 25px; /* Added more padding to the button */
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #555;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #777;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .profile-container {
+    padding: 20px;
+  }
+}

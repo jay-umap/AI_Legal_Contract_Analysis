@@ -1,0 +1,435 @@
+/* frontend/css/style.css - VERIFIED FINAL CORRECT VERSION FOR SCROLLING AND LAYOUT */
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    min-height: 100vh;
+    width: 100vw;
+    display: flex; /* CRUCIAL: Makes body a flex container to manage its children's layout */
+    flex-direction: row; /* Arranges sidebar and main-content side-by-side */
+    overflow: hidden; /* Prevents scrollbars from appearing on the body itself */
+}
+
+/* Layout */
+.container {
+    display: flex;
+    flex-grow: 1; /* Allows container to take available width within body's flex layout */
+    height: 100vh; /* CRUCIAL: Makes container take full viewport height */
+    background-color: #1a1a1a;
+    overflow: hidden; /* Prevents scrollbars on the container itself */
+}
+.sidebar {
+    width: 70px;
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+    overflow-y: auto; /* Allow sidebar content to scroll if it gets too long */
+}
+.sidebar-icon {
+    font-size: 24px;
+    color: #b0b0b0;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.sidebar-icon:hover {
+    color: #fff;
+}
+.top-left-icon {
+    margin-bottom: auto;
+    margin-top: 0;
+}
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1; /* Allows main content to take remaining horizontal space */
+    background-color: #282828;
+    display: flex;
+    flex-direction: column; /* Stacks chat section and output sections vertically */
+    padding: 20px;
+    height: 100vh; /* CRUCIAL: Ensures main-content takes full viewport height */
+    overflow-y: auto; /* CRUCIAL: Enables vertical scrolling for this specific area */
+    overflow-x: hidden; /* Hides horizontal overflow */
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 40px;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+.header h1 {
+    font-size: 24px;
+    color: #f0f0f0;
+}
+.user-profile {
+    font-size: 32px;
+    color: #b0b0b0;
+    cursor: pointer;
+}
+
+/* Chat Input Section */
+.chat-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px; /* Provide space below input and chat history */
+    flex-shrink: 0; /* Prevents this section from shrinking, maintaining its fixed height */
+}
+.chat-section h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #f0f0f0;
+}
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #3a3a3a;
+    border-radius: 25px;
+    padding: 10px 20px;
+    width: 700px;
+    max-width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.input-container input[type="text"] {
+    flex-grow: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #f0f0f0;
+    font-size: 18px;
+}
+.input-container input::placeholder {
+    color: #888;
+}
+.icon-button {
+    background: none;
+    border: none;
+    color: #b0b0b0;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.icon-button:hover {
+    color: #fff;
+}
+.send-button {
+    background-color: #4a4a4a;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    color: #f0f0f0;
+}
+.send-button:hover {
+    background-color: #5a5a5a;
+}
+
+/* File tags for chat input */
+.main-input-files {
+    width: 700px;
+    max-width: 90%;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #3a3a3a;
+    border-radius: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-size: 14px;
+    min-height: 45px; /* Ensure visibility even when empty */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+.file-tag {
+    background-color: #555;
+    padding: 5px 10px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.file-tag .fa-times-circle {
+    cursor: pointer;
+    color: #ccc;
+}
+.file-tag .fa-times-circle:hover {
+    color: #fff;
+}
+
+/* Chat History (for displaying messages) */
+.chat-history {
+    width: 700px;
+    max-width: 90%;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    max-height: 400px; /* Limit height and make scrollable if history is too long */
+    overflow-y: auto;
+    display: flex; /* Use flexbox for message alignment */
+    flex-direction: column;
+    gap: 10px; /* Space between messages */
+}
+
+.chat-message {
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 80%;
+    word-wrap: break-word; /* Ensure long words break */
+}
+
+.chat-message.user {
+    background-color: #5a5a5a;
+    align-self: flex-end; /* Align user messages to the right */
+    color: #f0f0f0;
+}
+
+.chat-message.ai {
+    background-color: #4a4a4a;
+    align-self: flex-start; /* Align AI messages to the left */
+    color: #e0e0e0;
+}
+
+
+/* Output Sections (Analysis Cards) */
+.output-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 20px; /* Add some padding at the bottom */
+    flex-grow: 1; /* Allows output sections to take up remaining vertical space */
+    width: 100%; /* Ensures it spans full width */
+    /* No overflow or fixed height here, let body handle scrolling */
+}
+.output-sections.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    height: 0;
+    visibility: hidden;
+}
+.cards-row {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+}
+.card {
+    background-color: #3a3a3a;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    color: #f0f0f0;
+    flex-shrink: 0;
+    flex: 1; /* Allows cards to grow and shrink */
+    min-width: 280px; /* Ensure minimum width for readability */
+    max-width: 450px; /* Max width to control size */
+}
+.section-document-card, .risk-nonstandard-card {
+    text-align: left;
+}
+.contract-analysis-card {
+    min-width: 300px;
+    max-width: 400px;
+}
+.contract-analysis-card h3 .fas {
+    margin-right: 10px;
+    color: #b0b0b0;
+}
+.upload-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px dashed #555;
+    border-radius: 8px;
+    padding: 30px 20px;
+    background-color: #303030;
+}
+.upload-icon {
+    font-size: 50px;
+    color: #b0b0b0;
+}
+.upload-area p {
+    margin: 5px 0;
+}
+.select-file-button {
+    background-color: #555;
+    color: #f0f0f0;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.select-file-button:hover {
+    background-color: #666;
+}
+.selected-file-name {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #b0b0b0;
+    word-break: break-all;
+}
+.privacy-notice-card,
+.summary-card {
+    width: 80%; /* Adjusted width for better readability across screen sizes */
+    max-width: 900px; /* Max width for large screens */
+    padding: 25px 30px;
+    background-color: #3a3a3a;
+    align-self: center; /* Center these wider cards */
+}
+.summary-card h3,
+.privacy-notice-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+.summary-content-placeholder .line,
+.content-placeholder .line {
+    height: 14px;
+    background-color: #555;
+    border-radius: 3px;
+    margin-bottom: 12px;
+}
+.summary-content-placeholder .line.long {
+    width: 95%;
+}
+.summary-content-placeholder .line.medium {
+    width: 80%;
+}
+.summary-content-placeholder .line.short {
+    width: 60%;
+}
+.content-placeholder .line.short {
+    width: 70%;
+}
+
+/* Basic Responsiveness - Add/Adjust as needed */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stack sidebar on top or hide it */
+    }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    .sidebar-icon {
+        margin: 0 15px; /* Adjust spacing for horizontal layout */
+    }
+    .top-left-icon {
+        display: none; /* Hide the top-left icon in smaller views or reposition */
+    }
+    .main-content {
+        padding: 15px;
+    }
+    .chat-section h2 {
+        font-size: 28px;
+    }
+    .input-container,
+    .main-input-files,
+    .chat-history {
+        width: 95%; /* Adjust width for smaller screens */
+        max-width: none; /* Remove max-width constraint */
+    }
+    .cards-row {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
+    .card {
+        width: 95%; /* Make cards take full width */
+        max-width: none;
+    }
+    .privacy-notice-card,
+    .summary-card {
+        width: 95%;
+        max-width: none;
+    }
+}
+
+/* frontend/css/style.css - Add to the end of the file */
+.loading-spinner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    height: 100%;
+}
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #667eea; /* A color that matches your theme */
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Make bullet points render correctly in the cards */
+.card ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.card li {
+    margin-bottom: 8px;
+}
+
+/* Visually distinguish Risk and Non-Standard cards */
+.card.risk-nonstandard-card {
+    border: 1px solid rgba(255, 99, 71, 0.3); /* Subtle red border */
+}
+.card.risk-nonstandard-card h3 {
+    color: #ff6347; /* Red-orange color for heading */
+}
+
+.card.risk-nonstandard-card:nth-child(2) { /* Targeting the Non-Standard card */
+    border: 1px solid rgba(255, 215, 0, 0.3); /* Subtle gold border */
+}
+.card.risk-nonstandard-card:nth-child(2) h3 {
+    color: #ffd700; /* Gold color for heading */
+}
+
+/* Ensure padding is consistent for the content inside cards */
+.card p {
+    padding-left: 0;
+    padding-right: 0;
+}

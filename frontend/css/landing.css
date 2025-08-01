@@ -1,0 +1,266 @@
+/* Import Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif; /* Use Inter as the primary font */
+    background: linear-gradient(135deg, #1a202c, #2d3748); /* Darker, more professional gradient */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Hide overflow for canvas */
+    position: relative; /* For positioning canvas */
+}
+
+/* Canvas for particle background */
+#backgroundCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind the content */
+    opacity: 0.7; /* Subtle transparency */
+}
+
+/* Landing Page Specific Styles */
+.landing-container {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white for frosted glass effect */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Stronger shadow */
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* On top of canvas */
+    z-index: 1; /* Above the canvas */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    transition: transform 0.5s ease-out, box-shadow 0.5s ease-out;
+}
+
+.landing-container:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+.landing-container h1 {
+    color: #e2e8f0; /* Light text for contrast */
+    margin-bottom: 20px;
+    font-size: 3em; /* Larger heading */
+    font-weight: 700; /* Bolder */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.landing-container .slogan {
+    color: #cbd5e0; /* Slightly darker light text */
+    margin-bottom: 40px;
+    font-size: 1.4em;
+    font-weight: 300; /* Lighter weight for slogan */
+    min-height: 1.4em; /* Ensure space for typing effect */
+    /* --- NEW ADDITION FOR SINGLE LINE --- */
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden; /* Hides overflowing content */
+    text-overflow: ellipsis; /* Displays an ellipsis (...) for clipped text */
+    /* --- END NEW ADDITION --- */
+}
+
+.landing-buttons {
+    display: flex;
+    gap: 25px; /* More space between buttons */
+    margin-top: 20px;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.landing-btn {
+    background: linear-gradient(45deg, #667eea, #764ba2); /* Gradient background */
+    color: white;
+    padding: 15px 35px; /* More padding */
+    border: none;
+    border-radius: 10px; /* More rounded corners */
+    cursor: pointer;
+    font-size: 1.25em; /* Slightly larger font */
+    font-weight: 600; /* Bolder text */
+    text-decoration: none;
+    transition: all 0.4s ease; /* Smoother transition for all properties */
+    flex-grow: 1;
+    max-width: 220px; /* Slightly larger max width */
+    text-align: center;
+    display: flex; /* For icon alignment */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Button shadow */
+}
+
+.landing-btn:hover {
+    background: linear-gradient(45deg, #764ba2, #667eea); /* Reverse gradient on hover */
+    transform: translateY(-3px) scale(1.02); /* Lift and slight scale effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.landing-btn.register {
+    background: linear-gradient(45deg, #48bb78, #38a169); /* Different gradient for register */
+}
+
+.landing-btn.register:hover {
+    background: linear-gradient(45deg, #38a169, #48bb78); /* Reverse gradient on hover */
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards 0.5s; /* Delay for slogan */
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out forwards 1s; /* Delay for buttons */
+}
+
+/* General Form Styles (from your original style.css, kept for consistency with other pages) */
+.form-container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.form-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.form-group:hover {
+    transform: scale(1.02);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input:not([type="checkbox"]),
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input:not([type="checkbox"]):focus,
+.form-group select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #667eea;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #5a67d8;
+    transform: scale(1.03);
+}
+
+.form-group.terms-checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: -10px;
+}
+
+.form-group.terms-checkbox input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+    transform: scale(1.2);
+}
+
+.form-group.terms-checkbox label {
+    display: inline;
+    margin-bottom: 0;
+    font-weight: normal;
+    color: #333;
+}
+
+.form-group.terms-checkbox a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.form-group.terms-checkbox a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border-color: #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-color: #f5c6cb;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile</title>
+  <link rel="stylesheet" href="css/profile.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <div class="profile-wrapper">
+    <div class="profile-container">
+      <h2>User Profile</h2>
+      
+        <fieldset>
+          <legend>🔒 Account Info</legend>
+
+          <div class="form-group">
+            <label for="username">Username / Display Name</label>
+            <div class="input-icon"><i class="fas fa-user"></i><input type="text" id="username" value="Jay umap" readonly /></div>
+          </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <div class="input-icon"><i class="fas fa-calendar-alt"></i><input type="text" id="dob" value="25/09/2004" readonly /></div>
+          </div>
+
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <div class="input-icon"><i class="fas fa-venus-mars"></i><input type="text" id="gender" value="Male" readonly /></div>
+          </div>
+
+          <div class="form-group">
+            <label for="profession">Profession</label>
+            <div class="input-icon"><i class="fas fa-user-graduate"></i><input type="text" id="profession" value="Student" readonly /></div>
+          </div>
+
+          <div class="form-buttons">
+            <button type="button" id="editButton">Edit</button>
+          </div>
+        </fieldset>
+      
+    </div>
+  </div>
+
+  <script src="js/profile.js"></script>
+</body>
+</html>
