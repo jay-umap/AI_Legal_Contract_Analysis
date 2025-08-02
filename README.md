@@ -72,7 +72,7 @@ Open frontend/index.html directly in your browser, or use the Live Server extens
 
 ## 📄 Research Paper
 To explore the background, motivation, and innovation behind this tool, check out our full research:
-📎 AI Legal Assistant – Research Paper [[https://github.com/jay-umap/AI_Legal_Contract_Analysis/blob/4a305a17723da550b40af86e72d980fae0274dc1/AI-LEGAL-ASSISTENT-RESEARCH-PAPER.pdf](url)]
+📎 AI Legal Assistant – Research Paper
 
 ## 💬 Feedback & Contributions
 We welcome contributions and suggestions from the community!
