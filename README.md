@@ -74,6 +74,11 @@ Open frontend/index.html directly in your browser, or use the Live Server extens
 To explore the background, motivation, and innovation behind this tool, check out our full research:
 📎 AI Legal Assistant – Research Paper
 
+## Watch a video demonstration of this project in action:
+
+## Link - [ [https://drive.google.com/file/d/1dlE6w3_aN4usfJquTHHtGDVLlOoAz0s7/view?usp=sharing](url) ] 
+
+
 ## 💬 Feedback & Contributions
 We welcome contributions and suggestions from the community!
 If you have an idea, issue, or improvement, feel free to open an issue or submit a pull request.
