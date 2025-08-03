@@ -76,7 +76,7 @@ To explore the background, motivation, and innovation behind this tool, check ou
 
 ## Watch a video demonstration of this project in action:
 
-## Link - [ [https://drive.google.com/file/d/1dlE6w3_aN4usfJquTHHtGDVLlOoAz0s7/view?usp=sharing](url) ] 
+## Link - (https://drive.google.com/file/d/1dlE6w3_aN4usfJquTHHtGDVLlOoAz0s7/view?usp=sharing)
 
 
 ## 💬 Feedback & Contributions
