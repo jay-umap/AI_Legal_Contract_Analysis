@@ -84,8 +84,4 @@ We welcome contributions and suggestions from the community!
 If you have an idea, issue, or improvement, feel free to open an issue or submit a pull request.
 Let’s make legal clarity accessible for everyone.
 
-## 📄 License
-This project is licensed under the MIT License.
 
-⭐ Support the Project
-If you find this project helpful, please give it a ⭐ star — it really helps and motivates the team!
